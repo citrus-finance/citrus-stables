@@ -1,0 +1,2 @@
+@layerzerolabs/oapp-evm/=lib/layerzero-devtools/packages/oapp-evm/
+layerzero/oft-evm/=lib/layerzero-devtools/packages/oft-evm/contracts/
