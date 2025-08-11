@@ -14,7 +14,7 @@ contract ShareTest is Test {
 
     MockERC20 asset = new MockERC20("USD", "USD", 18);
     IERC4626 vault = IERC4626(address(new MockERC4626(address(asset), "Mock Token Vault", "vwTKN")));
-    Share share = new Share("Citrus USD", "cUSD", 18);
+    Share share = new Share(owner, "Citrus USD", "cUSD", 18);
     SyntheticVault syntheticVault =
         new SyntheticVault(address(asset), address(share), address(vault), owner, address(this));
 

@@ -32,7 +32,7 @@ contract LayerZeroOFTAdapterTest is Test {
 
         MockERC20 asset = new MockERC20{salt: salt}("USD", "USD", 18);
         address vault = address(new MockERC4626{salt: salt}(address(asset), "Mock Token Vault", "vwTKN"));
-        Share share = new Share{salt: salt}("Citrus USD", "cUSD", 18);
+        Share share = new Share{salt: salt}(address(this), "Citrus USD", "cUSD", 18);
         SyntheticVault syntheticVault =
             new SyntheticVault{salt: salt}(address(asset), address(share), vault, address(this), address(this));
 
@@ -90,7 +90,7 @@ contract LayerZeroOFTAdapterTest is Test {
 
         vm.createSelectFork("https://lb.drpc.org/sonic/AkxCMJuiX0QnnblQwURID1YtBoj0ZOcR8K0YEklbR4ac");
 
-        new Share{salt: salt}("Citrus USD", "cUSD", 18);
+        new Share{salt: salt}(address(this), "Citrus USD", "cUSD", 18);
 
         share.addMinter(address(factory));
 

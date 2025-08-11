@@ -13,7 +13,7 @@ import {SyntheticVault} from "../src/SyntheticVault.sol";
 contract HigherDecimalsTest is ERC7575Test {
     function setUp() public override {
         _underlying_ = address(new MockERC20("USD Coin", "USDC", 6));
-        _share_ = address(new Share("Citrus USD", "cUSD", 18));
+        _share_ = address(new Share(address(this), "Citrus USD", "cUSD", 18));
         _vault_ = address(
             new SyntheticVault(
                 _underlying_,

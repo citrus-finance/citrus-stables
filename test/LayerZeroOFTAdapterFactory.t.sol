@@ -36,7 +36,7 @@ contract LayerZeroOFTAdapterFactoryTest is Test {
 
         asset = new MockERC20("USD", "USD", 18);
         vault = address(new MockERC4626(address(asset), "Mock Token Vault", "vwTKN"));
-        share = new Share("Citrus USD", "cUSD", 18);
+        share = new Share(address(this), "Citrus USD", "cUSD", 18);
         syntheticVault =
             new SyntheticVault(address(asset), address(share), address(vault), address(this), address(this));
 

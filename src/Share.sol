@@ -153,7 +153,7 @@ contract Share is Ownable, IERC20 {
                                CONSTRUCTOR
     //////////////////////////////////////////////////////////////*/
 
-    constructor(string memory name_, string memory symbol_, uint8 decimals_) Ownable(msg.sender) {
+    constructor(address owner_, string memory name_, string memory symbol_, uint8 decimals_) Ownable(owner_) {
         name = name_;
         symbol = symbol_;
         decimals = decimals_;

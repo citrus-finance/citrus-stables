@@ -16,7 +16,7 @@ contract YieldSetterTest is Test {
     function setUp() public {
         (signer, signerPK) = makeAddrAndKey("signer");
 
-        share = new Share("Citrus USD", "cUSD", 18);
+        share = new Share(address(this), "Citrus USD", "cUSD", 18);
         yieldSetter = new YieldSetter(address(this), signer, address(share), type(uint256).max);
         share.setYieldSetter(address(yieldSetter));
     }

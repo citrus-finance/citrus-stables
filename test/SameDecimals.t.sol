@@ -14,7 +14,7 @@ import {MockERC4626} from "./utils/MockERC4626.sol";
 contract SameDecimalsTest is ERC7575Test {
     function setUp() public override {
         _underlying_ = address(new MockERC20("DAI", "DAI", 18));
-        _share_ = address(new Share("Citrus USD", "cUSD", 18));
+        _share_ = address(new Share(address(this), "Citrus USD", "cUSD", 18));
         _vault_ = address(
             new SyntheticVault(
                 _underlying_,

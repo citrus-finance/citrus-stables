@@ -14,7 +14,7 @@ import {SyntheticVault} from "../src/SyntheticVault.sol";
 contract LowerDecimalsTest is ERC7575Test {
     function setUp() public override {
         _underlying_ = address(new MockERC20("tBTC", "tBTC", 18));
-        _share_ = address(new Share("Citrus BTC", "cBTC", 14));
+        _share_ = address(new Share(address(this), "Citrus BTC", "cBTC", 14));
         _vault_ = address(
             new SyntheticVault(
                 _underlying_,
