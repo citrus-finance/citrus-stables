@@ -20,10 +20,12 @@ contract DepositCapTest is Test {
     SyntheticVault syntheticVault = new SyntheticVault(address(asset), address(share), vault, owner, address(this));
 
     function setUp() public {
-        share.addMinter(address(syntheticVault));
+        vm.startPrank(owner);
 
-        vm.prank(owner);
+        share.addMinter(address(syntheticVault));
         syntheticVault.setDepositCapLimit(type(uint256).max);
+
+        vm.stopPrank();
 
         syntheticVault.setDepositCap(type(uint256).max);
     }
